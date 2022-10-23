@@ -1,0 +1,28 @@
+footer {
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: small;
+  padding: 40px 0px;
+}
+
+.hrefs {
+  display: flex;
+  justify-content: center;
+}
+
+footer a {
+  color: #8e8e8e;
+  text-decoration: none;
+  margin: 10px;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+.trademark {
+  color: #8e8e8e;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}

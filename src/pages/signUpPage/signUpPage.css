@@ -1,0 +1,57 @@
+/* importing fonts */
+@font-face {
+  font-family: sharpSansBold;
+  src: url("../../../public/fonts/SharpSansBold.otf");
+}
+
+@font-face {
+  font-family: sharpSansMedium;
+  src: url("../../../public/fonts/SharpSansMedium.otf");
+}
+
+@font-face {
+  font-family: EuclidCircularBMedium;
+  src: url("../../../public/fonts/EuclidCircularBMedium.ttf");
+}
+
+.signUpPage {
+  display: flex;
+}
+
+.showCase img {
+  border-radius: 10px;
+  /* width: 578px; */
+  height: 400px;
+  margin: 160px;
+  border: 2px solid #dbdbdb;
+  margin-bottom: 0px;
+  margin-top: 105px;
+}
+
+.funCase {
+  margin: 60px;
+  margin-top: 105px;
+  margin-bottom: 0px;
+}
+
+.funCase h1 {
+  font-family: EuclidCircularBMedium;
+}
+
+/* Adapting for mobile */
+@media screen and (max-width: 600px) {
+  .showCase {
+    display: none;
+    margin: auto;
+  }
+
+  #loginPage .funCase {
+    margin: auto;
+    margin-top: 100px;
+  }
+
+  .funCase {
+    margin: auto;
+    margin-top: 60px;
+  }
+}
