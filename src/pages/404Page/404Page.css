@@ -1,0 +1,10 @@
+.page404 h1 {
+    font-family: EuclidCircularBMedium;
+    margin: 330px 0;
+    margin-bottom: 190px;
+}
+
+.page404{
+    display: flex;
+    justify-content: center;
+}
