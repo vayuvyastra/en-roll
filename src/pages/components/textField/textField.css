@@ -1,0 +1,28 @@
+.fields {
+  margin-top: 20px;
+  border-radius: 1vh;
+  border: 1px solid #dbdbdb;
+  border-color: #dbdbdb;
+}
+
+.legendclass {
+  font-family: sharpSansBold;
+  font-size: 13px;
+  font-weight: 800;
+  text-size-adjust: 5;
+  color: #c7c5c5;
+}
+
+.inputfield {
+  font-family: Roboto;
+  font-weight: 400;
+  width: 17rem;
+  height: 3vh;
+  border: none;
+  font-size: medium;
+  outline: none;
+}
+
+::placeholder {
+  color: #8e8e8e;
+}
