@@ -2,8 +2,12 @@
 import "./submitBtn.css";
 
 const SubmitBtn = (props) => {
+  const handleClick = () => {
+    props.onClick();
+  };
+
   return (
-    <button type="submit" className="submitBtn">
+    <button className="submitBtn" onClick={handleClick}>
       {props.content}
     </button>
   );

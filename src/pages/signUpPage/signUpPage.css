@@ -20,7 +20,7 @@
 
 .showCase img {
   border-radius: 10px;
-  /* width: 578px; */
+  width: 578px;
   height: 400px;
   margin: 160px;
   border: 2px solid #dbdbdb;
@@ -32,6 +32,10 @@
   margin: 60px;
   margin-top: 105px;
   margin-bottom: 0px;
+}
+
+#signUpPage .funCase {
+  margin-top: 65px;
 }
 
 .funCase h1 {

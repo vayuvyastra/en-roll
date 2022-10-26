@@ -24,7 +24,7 @@ function App() {
       ),
     },
     {
-      path: "/login-page",
+      path: "/login",
       element: (
         <Page title="Login">
           <LoginPage />
@@ -33,9 +33,9 @@ function App() {
       ),
     },
     {
-      path: "/sign-up-page",
+      path: "/create-account",
       element: (
-        <Page title="Sign Up">
+        <Page title="Create Account">
           <SignUpPage />
           <Footer />
         </Page>

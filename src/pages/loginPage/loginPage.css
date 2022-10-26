@@ -3,12 +3,13 @@
 }
 
 #loginPage .funCase {
-  margin-top: 190px;
-  margin-left: 150px;
+  margin-top: 150px;
+  margin-left: 100px;
   margin-bottom: 70px;
+  margin-right: 100px;
 }
 
-.funCase p {
+.redirect {
   font-family: Roboto;
   color: #727171;
   font-weight: 500;
@@ -16,11 +17,11 @@
   padding-left: 15px;
 }
 
-.funCase p a {
+.redirect a {
   color: rgb(54, 115, 186);
   text-decoration: none;
 }
 
-.funCase p a:hover {
+.redirect a:hover {
   text-decoration: underline;
 }
