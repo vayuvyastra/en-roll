@@ -15,7 +15,7 @@ const EnrollBtn = (props) => {
         method: "POST",
         body: JSON.stringify({
           userId: props.vID,
-          amount: "205",
+          amount: "2",
         }),
       }
     );

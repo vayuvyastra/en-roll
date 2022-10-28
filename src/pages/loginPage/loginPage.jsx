@@ -76,7 +76,7 @@ const LoginPage = () => {
     })
       .then((response) => {
         if (response.ok) {
-          // console.log(response.statusText, response.status);
+          console.log(response.statusText, response.status);
           return response.json();
         } else {
           // console.log(response.statusText, response.status);
@@ -165,6 +165,9 @@ const LoginPage = () => {
           name="password"
           onFill={handleFill}
         />
+        <p className="redirect">
+          <a href="/forgot-password">Forgot password?</a>
+        </p>
         {makePay ? (
           <SubmitBtn content="Do later" onClick={handleDoLater} />
         ) : (
