@@ -33,6 +33,7 @@ const LoginPage = () => {
     state: false,
     content: "",
   });
+  const [isLoading, setIsLoading] = useState(false);
 
   // Some Functions !!!!!!
   const capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1);
@@ -64,6 +65,7 @@ const LoginPage = () => {
   };
 
   const handleComplete = async () => {
+    setIsLoading(true);
     const resp = await fetch("https://vayuyastra.herokuapp.com/auth/login", {
       headers: {
         "Content-Type": "application/json",
@@ -87,7 +89,7 @@ const LoginPage = () => {
         // If server not responding, then rendering "Server error"
         setErr({
           state: true,
-          content: "Server Error",
+          content: "Server error Please try again later",
         });
       });
 
@@ -103,22 +105,33 @@ const LoginPage = () => {
 
     try {
       if (resp.creditionals.email === email) {
-        // console.log("Hello world!");
+        // Checking length of the response object
+        // console.log(Object.keys(resp).length);
+        if (Object.keys(resp).length === 2) {
+          setSucs({
+            state: true,
+            content: "Logged In",
+          });
+        }
+
         if (resp.accountInfo.accountStatus === "Not activated") {
           setWarn({
             state: true,
             content: capitalize(resp.accountInfo.reason),
           });
           setMakePay(true);
+          setSucs({
+            state: false,
+            content: "",
+          });
 
           userId = resp.creditionals.userId;
-        } else {
-          // console.log("Logged In");
         }
       }
     } catch (e) {}
-
+    
     // console.log(resp);
+    setIsLoading(false);
   };
 
   const handleSuccess = (paymentId) => {
@@ -131,7 +144,7 @@ const LoginPage = () => {
       state: true,
       content: "Successfully Paid",
     });
-    console.log(paymentId);
+    // console.log(paymentId);
   };
 
   const handleDoLater = () => {
@@ -171,7 +184,11 @@ const LoginPage = () => {
         {makePay ? (
           <SubmitBtn content="Do later" onClick={handleDoLater} />
         ) : (
-          <SubmitBtn content="Sign in" onClick={handleComplete} />
+          <SubmitBtn
+            content="Sign in"
+            onClick={handleComplete}
+            disable={isLoading}
+          />
         )}
         {/* If payment required then Enroll button will be rendered */}
         {makePay && <EnrollBtn vID={userId} onSuccess={handleSuccess} />}

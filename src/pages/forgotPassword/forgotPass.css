@@ -1,0 +1,13 @@
+.heading {
+  display: flex;
+  justify-content: center;
+}
+
+.forgot-password h1 {
+  font-family: EuclidCircularBMedium;
+  text-align: center;
+}
+
+.forgot-password {
+  margin-top: 120px;
+}

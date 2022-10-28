@@ -9,6 +9,8 @@ import Feedback from "../components/feedback/feedback.jsx";
 // importing style sheet
 import "./signUpPage.css";
 
+import logo from "../../images/club-photo-2.jpg"
+
 // Global variables accross login page
 var fullName;
 var email;
@@ -25,6 +27,7 @@ const SignUpPage = () => {
     state: false,
     content: "",
   });
+  const [isLoading, setIsLoading] = useState(false);
 
   // Some Functions !!!!!!
   const capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1);
@@ -55,6 +58,7 @@ const SignUpPage = () => {
   };
 
   const handleComplete = async () => {
+    setIsLoading(true);
     const resp = await fetch("https://vayuyastra.herokuapp.com/auth/signup", {
       headers: {
         "Content-Type": "application/json",
@@ -108,13 +112,14 @@ const SignUpPage = () => {
     } catch (e) {}
 
     // console.log(resp);
+    setIsLoading(false);
   };
 
   return (
     <div id="signUpPage" className="signUpPage">
       <div className="showCase">
         <img
-          src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg"
+          src={logo}
           alt="Show Case"
         />
       </div>
@@ -139,7 +144,7 @@ const SignUpPage = () => {
           name="password"
           onFill={handleFill}
         />
-        <SubmitBtn content="Sign Up" onClick={handleComplete} />
+        <SubmitBtn content="Sign Up" onClick={handleComplete} disable={isLoading}/>
         {/* Error handling of differnt post responses */}
         {err.state && (
           <Feedback feedback="error" icon="close" content={err.content} />

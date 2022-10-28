@@ -1,10 +1,16 @@
 // importing dependency's components
 import useRazorpay from "react-razorpay";
+import { useState } from "react";
+
+// importing components
+import SubmitBtn from "../submitBtn/submitBtn.jsx";
 
 const EnrollBtn = (props) => {
+  const [isLoading, setIsLoading] = useState(false);
   const Razorpay = useRazorpay();
 
   const handleClick = async () => {
+    setIsLoading(true);
     // Step 1: Get the order Id from the server
     const res = await fetch(
       "https://vayuyastra.herokuapp.com/payment/checkout",
@@ -15,7 +21,7 @@ const EnrollBtn = (props) => {
         method: "POST",
         body: JSON.stringify({
           userId: props.vID,
-          amount: "2",
+          amount: "205",
         }),
       }
     );
@@ -25,7 +31,7 @@ const EnrollBtn = (props) => {
 
     var options = {
       // Enter the Key ID generated from the Dashboard
-      key: "rzp_live_9OFbjTM3IZVPfJ",
+      key: process.env.RAZORPAY_API_KEY,
       // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
       amount: "5",
       currency: "INR",
@@ -84,12 +90,11 @@ const EnrollBtn = (props) => {
 
     var rzp1 = new Razorpay(options);
     rzp1.open();
+    setIsLoading(false);
   };
 
   return (
-    <button className="enrollBtn submitBtn" onClick={handleClick}>
-      Make Payment
-    </button>
+    <SubmitBtn content="make payment" onClick={handleClick} disable={isLoading}/>
   );
 };
 

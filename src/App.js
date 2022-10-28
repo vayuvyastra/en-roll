@@ -8,6 +8,7 @@ import SignUpPage from "./pages/signUpPage/signUpPage.jsx";
 import Page from "./pages/page.jsx";
 import Page404 from "./pages/404Page/404Page.jsx";
 import Footer from "./pages/components/footer/footer.jsx";
+import ForgotPass from "./pages/forgotPassword/forgotPass.jsx";
 
 // importing style sheet
 import "./app";
@@ -16,6 +17,12 @@ function App() {
   const router = createBrowserRouter([
     {
       path: "/",
+      element: (
+        <Page title="404 Page Not Found">
+          <Page404 />
+          <Footer />
+        </Page>
+      ),
       errorElement: (
         <Page title="404 Page Not Found">
           <Page404 />
@@ -37,6 +44,15 @@ function App() {
       element: (
         <Page title="Create Account">
           <SignUpPage />
+          <Footer />
+        </Page>
+      ),
+    },
+    {
+      path: "/forgot-password",
+      element: (
+        <Page title="Forgot Password">
+          <ForgotPass />
           <Footer />
         </Page>
       ),
