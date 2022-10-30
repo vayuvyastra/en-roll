@@ -1,16 +1,15 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
-import "./forgotPass.css";
-
 import TextField from "../components/textField/textField.jsx";
 import SubmitBtn from "../components/submitBtn/submitBtn";
 import Feedback from "../components/feedback/feedback.jsx";
-import Footer from "../components/footer/footer";
+import Footer from "../components/footer/footer.jsx";
 
+var otp;
 var email;
 
-const ForgotPass = () => {
+const VerifyOTP = () => {
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
   const [err, setErr] = useState({
@@ -21,7 +20,11 @@ const ForgotPass = () => {
   const capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1);
 
   const handleFill = (inputName, inputValue) => {
-    email = inputValue;
+    if (inputName === "otp") {
+      otp = inputValue;
+    } else if (inputName === "email") {
+      email = inputValue;
+    }
     setErr({
       state: false,
       content: "",
@@ -31,7 +34,7 @@ const ForgotPass = () => {
   const handleOTP = async () => {
     setIsLoading(true);
     const resp = await fetch(
-      "https://vayuyastra.herokuapp.com/auth/forgotPassword",
+      "https://vayuyastra.herokuapp.com/auth/verifyOTP",
       {
         headers: {
           "Content-Type": "application/json",
@@ -39,6 +42,7 @@ const ForgotPass = () => {
         method: "POST",
         body: JSON.stringify({
           email: email,
+          otp: otp,
         }),
       }
     ).then((response) => {
@@ -62,16 +66,18 @@ const ForgotPass = () => {
 
     try {
       if (resp.status === "success") {
-        navigate("/verify-otp");
+        navigate("/update-password");
       }
     } catch (e) {}
+
+    // console.log(resp);
 
     setIsLoading(false);
   };
 
   return (
     <div className="forgot-password centered">
-      <h1>Forgot Password</h1>
+      <h1>Verify OTP</h1>
 
       <div className="heading">
         <TextField
@@ -80,23 +86,21 @@ const ForgotPass = () => {
           name="email"
           onFill={handleFill}
         />
+        <TextField label="OTP" type="text" name="otp" onFill={handleFill} />
       </div>
       <div className="heading">
-        <button
-          onClick={() => navigate("/login")}
-          className="help-btn"
-          style={{ fontFamily: "sharpSansBold" }}
-        >
-          Back
-        </button>
-        <SubmitBtn onClick={handleOTP} content="send otp" disable={isLoading} />
+        <SubmitBtn
+          onClick={handleOTP}
+          content="verify otp"
+          disable={isLoading}
+        />
       </div>
       {err.state && (
         <Feedback feedback="error" icon="close" content={err.content} />
       )}
-      <Footer/>
+      <Footer />
     </div>
   );
 };
 
-export default ForgotPass;
+export default VerifyOTP;

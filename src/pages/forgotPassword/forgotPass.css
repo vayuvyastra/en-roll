@@ -1,6 +1,5 @@
 .heading {
-  display: flex;
-  justify-content: center;
+  display: block;
 }
 
 .forgot-password h1 {
@@ -9,5 +8,13 @@
 }
 
 .forgot-password {
-  margin-top: 120px;
+  width: 320px;
+}
+
+.centered {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
 }
