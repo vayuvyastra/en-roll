@@ -25,3 +25,26 @@
 .redirect a:hover {
   text-decoration: underline;
 }
+
+/* width */
+::-webkit-scrollbar {
+  margin-right: 10px;
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #eae7e7;
+  /* border-radius: 10px; */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(54, 115, 186);
+  /* border-radius: 10px; */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(23, 76, 136);
+}
