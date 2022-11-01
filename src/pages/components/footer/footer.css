@@ -3,6 +3,7 @@ footer {
   font-weight: 400;
   font-size: small;
   padding: 40px 0px;
+  user-select: none;
 }
 
 .hrefs {

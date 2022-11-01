@@ -1,0 +1,20 @@
+.heading {
+  display: block;
+}
+
+.forgot-password h1 {
+  font-family: EuclidCircularBMedium;
+  text-align: center;
+}
+
+.forgot-password {
+  width: 320px;
+}
+
+.centered {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+}
