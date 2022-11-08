@@ -1,0 +1,277 @@
+* {
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+.Maincontainer {
+
+    width: 100%;
+    height: 100vh;
+    /* background-image: linear-gradient(to bottom,black,rgb(9, 9, 49),rgb(17, 17, 57),rgb(32, 32, 72)); */
+    background-color: black;
+
+}
+.container {
+
+    width: 100%;
+    height: 100vh;
+}
+
+.img-1 {
+    margin-left: 2rem;
+    padding: 2rem;
+    opacity: 65%;
+    width: 65px;
+    height: 25px;
+}
+
+
+.Titles {
+    margin-top: -6vw;
+    color: whitesmoke;
+    margin-left: -3rem;
+
+
+}
+
+#title1 {
+    font-size: 5rem;
+    font-weight: 900;
+    font-family: "Roboto";
+    letter-spacing: 0.285rem;
+    margin-top: 4vh;
+    margin-left: 40vw;
+    text-shadow: 1px 1px 1px darkblue,
+        1px 2px 1px grey,
+        1px 3px 1px darkblue,
+        1px 4px 1px grey,
+        1px 5px 1px darkblue,
+        1px 6px 1px grey,
+        1px 7px 1px darkblue,
+        1px 8px 1px grey,
+        1px 9px 1px darkblue,
+        1px 10px 1px black,
+        1px 19px 7px black,
+        1px 23px 7px black,
+        1px 27px 7px black,
+        1px 31px 7px black;
+}
+
+#title2 {
+    font-size: 2rem;
+    font-weight: 900;
+    font-family: "Roboto";
+    margin-top: 18px;
+    letter-spacing: 0.285rem;
+    margin-left: 47vw;
+}
+
+#title3 {
+    font-size: 2.5em;
+    font-weight: 900;
+    font-family: "Roboto";
+    word-spacing: 0.25rem;
+    margin-left: 38vw;
+    color: rgb(99, 96, 96);
+    margin-top: 50vh;
+}
+
+.buttons {
+    margin-left: 20vw;
+    margin-top: -vh;
+    font-family: "Roboto";
+}
+
+.tags {
+    color: white;
+    margin-left: 4vw;
+}
+
+/* project section css */
+.projectSection {
+    background-color: black;
+    width: 100%;
+    height: 75vh;
+    color: white;
+}
+
+/* Contact section css */
+
+.contactdetails {
+    width: 100vw;
+    height: 65vh;
+    background-color: black;
+    overflow: hidden;
+}
+
+.contact-container {
+    background-color: transparent;
+    width: 45vw;
+    height: 38vh;
+    margin-top: 0.8vh;
+    margin-left: 2vw;
+}
+
+.media-div {
+    background-color: transparent;
+    width: 45vw;
+    height: 38vh;
+    margin-left: 53vw;
+    margin-top: -38vh;
+
+}
+
+#line {
+    transform: rotate(90deg);
+}
+
+.links {
+    margin-top: 6vh;
+
+}
+
+.contacttags {
+    margin-left: 2vw;
+    color: rgb(130, 128, 128);
+    font-family: "SharpSansMedium"
+}
+
+.foot-container {
+    margin-top: 9vh;
+    margin-left: 9vw;
+}
+
+.footer-element {
+    margin-left: 2vw;
+    opacity: 50%;
+}
+
+.footer-element:hover {
+    opacity: 95%;
+}
+
+#vayu-image {
+    margin-left: 17vw;
+}
+
+.contacttitle {
+    margin-left: 15vw;
+    padding-top: 2vh;
+    color: rgb(195, 173, 173);
+}
+
+.email {
+    margin-left: 10vw;
+    padding-top: 2vh;
+    font-weight: bolder;
+    font-family: "Roboto"
+}
+
+#emailid {
+    padding-top: 3vh;
+    font-size: 25px;
+    color: rgb(114, 110, 110);
+}
+
+.phone {
+    margin-left: 10vw;
+    padding-top: 3vh;
+    font-family: "Roboto";
+}
+
+.address {
+    margin-left: 10vw;
+    padding-top: 2.5vh;
+}
+
+#Email,
+#phone,
+#address {
+    color: rgb(130, 128, 128);
+}
+
+#number {
+    font-weight: 900;
+    margin-left: 1.5vw;
+    font-size: larger;
+    color: rgb(124, 124, 124);
+}
+
+.subscription {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5vh;
+    width: 60vw;
+    margin-left: 19vw;
+    height: 20vh;
+    font-family: "SharpSansMedium";
+}
+
+#subscribe {
+    margin-top: -0.75vh;
+    color: rgb(131, 111, 111);
+}
+
+#desc {
+    margin-top: 1.98vh;
+    color: rgb(153, 150, 150);
+    font-size: large;
+}
+
+.submail {
+    margin-top: 5vh;
+}
+
+#userEmail {
+    border-radius: 5px;
+    width: 30vw;
+    height: 5vh;
+    color: rgb(85, 70, 70);
+    outline: none;
+    font-size: 15px;
+}
+
+.submitbtn {
+    font-weight: 700;
+    width: 8vw;
+    height: 4vh;
+    cursor: pointer;
+    margin-left: -8.4vw;
+    background-image: linear-gradient(to right, rgb(49, 47, 47), rgb(85, 84, 84), rgb(50, 50, 65));
+    color: white;
+    border-radius: 10px;
+}
+
+.submitbtn:active {
+    scale: 0.95;
+}
+
+.line {
+    position: absolute;
+    color: rgb(33, 33, 54);
+    margin-left: 47vw;
+    width: 2px;
+    margin-top: -33vh;
+    font-size: 23vh;
+    font-weight: 100;
+
+}
+
+
+/* Screen Breakpoints */
+
+@media only screen and (max-width: 600px) {
+    .Maincontainer {
+        width: 100%;
+        height: 50vh;
+
+    }
+    .container {
+        width: 70%;
+        height: 100vh;
+    }
+
+}

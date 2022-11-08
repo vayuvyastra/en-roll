@@ -8,7 +8,8 @@ import SignUpPage from "./pages/signUpPage/signUpPage.jsx";
 import Page from "./pages/page.jsx";
 import Page404 from "./pages/404Page/404Page.jsx";
 import Footer from "./pages/components/footer/footer.jsx";
-
+import MainPage from "./pages/mainPage/mainPage.jsx";
+import UserList from "./pages/components/userList/userList.jsx";
 // importing style sheet
 import "./app";
 
@@ -16,6 +17,18 @@ function App() {
   const router = createBrowserRouter([
     {
       path: "/",
+      element:<MainPage/>,
+      errorElement: (
+        <Page title="404 Page Not Found">
+          <Page404 />
+          <Footer />
+        </Page>
+      ),
+    },
+
+    {
+      path: "/userList",
+      element:<UserList/>,
       errorElement: (
         <Page title="404 Page Not Found">
           <Page404 />

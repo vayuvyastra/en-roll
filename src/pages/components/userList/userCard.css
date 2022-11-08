@@ -1,0 +1,64 @@
+
+*{
+    margin:0;
+    border:0;
+    box-sizing: border-box;
+}
+.userCardContainer{
+    display: inline-flex;
+    flex-direction: column;
+}
+.card-container{
+    margin-right: 1vw;
+    background-color:rgb(248, 237, 237) ;
+    box-shadow:0 10px 19px 5px rgb(55, 54, 54);
+    width:17vw;
+    height:42vh;
+    margin:0.5vw;
+    border-radius: 15px;
+    border-top: 1px solid rgba(0, 0, 0, 0.5) ;
+    border-left: 1px solid rgba(11, 11, 11, 0.5) ;
+    backdrop-filter: blur(100px);  
+    overflow: hidden;
+}
+.pro{
+    width:9vw;
+    height:17vh;
+    border-radius: 15px;
+    border-bottom: 3px solid rgb(57, 56, 56);
+    box-shadow:0 5px 12px  rgb(55, 54, 54);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    top:22%;
+    left:50%;
+    position: relative;
+    border:5px solid white;
+    transform: translate(-50%,-50%);
+}
+
+.username{
+    font-weight: 900;
+    font-size: 25px;
+    margin-left: 2vw;
+    margin-top: 5vh;
+    color:rgb(40, 41, 40);
+    font-family: "Roboto";
+}
+.title{
+    font-size:15px;
+    font-family: "EuclidCircularBMedium";
+}
+.vayu-id{
+    color:rgb(40, 41, 40);
+    font-weight: 900;
+    font-size: 25px;
+    margin-left: 2vw;
+    margin-top: 1vh;
+    font-family: "Roboto";
+}
+
+
+
+
